@@ -22,7 +22,7 @@ git:
 	@ git init
 	@ git add .
 	@ git commit -m"new updates"
-	@ git remote add origin http://www.github.com/adeeb2358/$(current_dir)
+	@ #git remote add origin http://www.github.com/adeeb2358/$(current_dir)
 	@ git push origin master
 
 build-and-run: compile run
