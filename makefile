@@ -14,12 +14,15 @@ MAKE_OBJ_DIR        = if [ ! -d "$(OBJ_DIR)/" ]; then  $(MKDIR_P) $(OBJ_DIR); fi
 MAKE_MAIN_EXE_DIR   = if [ ! -d "$(MAIN_EXE)/" ]; then $(MKDIR_P) $(MAIN_EXE); fi;
 CCFLAGS             = -g -DEBUG
 CORE_FILE 			= core
+mkfile_path 		:= $(abspath $(lastword $(MAKEFILE_LIST)))
+current_dir 		:= $(notdir $(patsubst %/,%,$(dir $(mkfile_path))))
 
 git:
+	
 	@ git init
 	@ git add .
-	@ git commit -m"new updates"
-	@ git remote add origin http://www.github.com/adeeb2358/signals
+	@ git commit 
+	@ git remote add origin http://www.github.com/adeeb2358/$(current_dir)
 	@ git push origin master
 
 build-and-run: compile run
