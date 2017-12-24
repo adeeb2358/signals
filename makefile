@@ -19,7 +19,7 @@ git:
 	@ git init
 	@ git add .
 	@ git commit -m"new updates"
-	@ git add origin http://www.github.com/adeeb2358/signals
+	@ git remote add origin http://www.github.com/adeeb2358/signals
 	@ git push origin master
 
 build-and-run: compile run
