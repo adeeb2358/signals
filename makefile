@@ -1,3 +1,4 @@
+#variables for compilation
 CC                  = g++
 SRC_DIR             = ""
 OBJ_DIR             = libs
@@ -9,11 +10,17 @@ REDIRECT_COMMAND 	= 2>&1 | tee -a
 SRC_FILES           = $(wildcard *.cpp)
 OBJ_FILES           = $(patsubst %.cpp,%.o,$(SRC_FILES))
 OBJ_FILES_WITH_PATH = $(patsubst %.cpp,$(OBJ_DIR)/%.o,$(SRC_FILES))
+
+#variables for binary directory creation
 MKDIR_P             = mkdir -p
 MAKE_OBJ_DIR        = if [ ! -d "$(OBJ_DIR)/" ]; then  $(MKDIR_P) $(OBJ_DIR); fi; 
 MAKE_MAIN_EXE_DIR   = if [ ! -d "$(MAIN_EXE)/" ]; then $(MKDIR_P) $(MAIN_EXE); fi;
+
+#variables for debugging
 CCFLAGS             = -g -DEBUG
 CORE_FILE 			= core
+
+#variables for git commiting
 MAKE_FILE_PATH 		:= $(abspath $(lastword $(MAKEFILE_LIST)))
 CURRENT_DIR 		:= $(notdir $(patsubst %/,%,$(dir $(MAKE_FILE_PATH))))
 
@@ -21,7 +28,7 @@ add:
 	@ git init
 	@ git remote add origin http://www.github.com/adeeb2358/$(CURRENT_DIR)
 git:
-	
+	@ make clean
 	@ git init
 	@ git add .
 	@ git commit -m"new updates"
