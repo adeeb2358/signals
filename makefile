@@ -15,6 +15,13 @@ MAKE_MAIN_EXE_DIR   = if [ ! -d "$(MAIN_EXE)/" ]; then $(MKDIR_P) $(MAIN_EXE); f
 CCFLAGS             = -g -DEBUG
 CORE_FILE 			= core
 
+git:
+	@ git init
+	@ git add .
+	@ git commit -m"new updates"
+	@ git add origin http://www.github.com/adeeb2358/signals
+	@ git push origin master
+
 build-and-run: compile run
 
 all:compile

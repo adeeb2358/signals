@@ -1,3 +1,0 @@
-compiling main.cpp
-compiling functions.cpp
-building main
