@@ -2,5 +2,13 @@
 #define FUNCTIONS_H
 
 #include <iostream>
+#include <unistd.h>
+#include <stdio.h>
+#include <signal.h>
+#include <sys/wait.h>
+#include <cstdlib>
+#include <string.h>
+
+void basic_signal();
 
 #endif // FUNCTIONS_H
