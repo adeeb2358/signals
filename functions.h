@@ -10,5 +10,7 @@
 #include <string.h>
 
 void basic_signal();
+void basic_signal_handler_demo();
+void sigaction_demo_pipe();
 
 #endif // FUNCTIONS_H

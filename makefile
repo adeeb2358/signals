@@ -57,12 +57,12 @@ build_objects:$(OBJ_FILES)
 
 build_main:
 	
-	@echo "building main" $^ $(REDIRECT_COMMAND) $(LOG_FILE)
+	@ echo "building main" $^ $(REDIRECT_COMMAND) $(LOG_FILE)
 	@ $(CC) $(CCFLAGS) -o $(MAIN_EXE_FILE) $(OBJ_FILES_WITH_PATH)  $(REDIRECT_COMMAND) $(LOG_FILE)
 
 $(OBJ_FILES):
 	
-	@echo "compiling" $*.cpp $(REDIRECT_COMMAND) $(LOG_FILE)
+	@ echo "compiling" $*.cpp $(REDIRECT_COMMAND) $(LOG_FILE)
 	@ $(CC)  $(CCFLAGS) -c  $*.cpp -o $(OBJ_DIR)/$@   $(REDIRECT_COMMAND)  $(LOG_FILE)
 
 .PHONY:	clean
